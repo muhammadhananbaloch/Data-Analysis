@@ -21,3 +21,7 @@ for items in complete_items:
 product_prices = []
 for items in complete_items:
     product_prices.append(items.select('div.product-item-info div.product.details.product-item-details div.price-box.price-final_price span.special-price span.price-container.price-final_price.tax.weee span.price-wrapper span.price'))
+
+current_discount = []
+for items in complete_items:
+    current_discount.append(items.select('div.product-item-info div.product.details.product-item-details div.price-box.price-final_price div.stock.unavailable.discount-percent span'))
