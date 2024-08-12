@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup as bs
+import pandas as pd
 
 # load the webpage
 url = "https://www.junaidjamshed.com/mens/kameez-shalwar.html"
@@ -42,3 +43,9 @@ for prices in product_prices:
 discount=[]
 for discounts in current_discount:
     discount.append([discount.text.strip() for discount in discounts])
+
+data = {'Product Name': product_name,
+        'Product ID': product_id,
+        'Price': product_price,
+        'Discount': discount}
+df = pd.DataFrame(data)
