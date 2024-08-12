@@ -17,3 +17,7 @@ for columns in main:
 product_names_id = []
 for items in complete_items:
     product_names_id.append(items.select('div.product-item-info div.product.details.product-item-details h2.product.name.product-item-name a'))
+
+product_prices = []
+for items in complete_items:
+    product_prices.append(items.select('div.product-item-info div.product.details.product-item-details div.price-box.price-final_price span.special-price span.price-container.price-final_price.tax.weee span.price-wrapper span.price'))
