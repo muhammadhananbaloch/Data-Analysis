@@ -49,3 +49,5 @@ data = {'Product Name': product_name,
         'Price': product_price,
         'Discount': discount}
 df = pd.DataFrame(data)
+
+df.to_csv("junaid_jamshed.csv", index=False)
