@@ -38,3 +38,7 @@ for names_ids in product_names_id:
 product_price=[]
 for prices in product_prices:
     product_price.append([price.text.strip('PKR').lstrip() for price in prices])
+
+discount=[]
+for discounts in current_discount:
+    discount.append([discount.text.strip() for discount in discounts])
