@@ -15,7 +15,7 @@ product_id=[]
 product_price=[]
 discount=[]
 page_num=1
-for i in range(1,4):
+while True:
     url=base_url+str(page_num)
     try:
         r = requests.get(url)
@@ -25,6 +25,10 @@ for i in range(1,4):
         continue
     # convert to a beautiful soup object
     webpage = bs(r.content, "html.parser")
+
+    # Check if there are no more pages to parse
+    if not webpage.select('div.page-wrapper'):
+        break
 
     page_wrapper = webpage.select('div.page-wrapper')
     main = [wrapper.select('main.page-main')for wrapper in page_wrapper]
