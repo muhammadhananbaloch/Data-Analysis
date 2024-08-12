@@ -34,3 +34,7 @@ for names_ids in product_names_id:
         head, sep, tail = nameAndId.partition('|')
         product_name.append(head.strip())
         product_id.append(tail.strip())
+    
+product_price=[]
+for prices in product_prices:
+    product_price.append([price.text.strip('PKR').lstrip() for price in prices])
