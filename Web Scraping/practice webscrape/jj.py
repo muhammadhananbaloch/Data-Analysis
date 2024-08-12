@@ -38,11 +38,19 @@ for names_ids in product_names_id:
     
 product_price=[]
 for prices in product_prices:
-    product_price.append([price.text.strip('PKR').lstrip() for price in prices])
+    if prices:
+        for price in prices:
+            product_price.append(price.text.strip('PKR').lstrip())
+    else:
+        product_price.append('')
 
 discount=[]
 for discounts in current_discount:
-    discount.append([discount.text.strip() for discount in discounts])
+    if discounts:
+        for disc in discounts:
+            discount.append(disc.text.strip())
+    else:
+        discount.append('')
 
 data = {'Product Name': product_name,
         'Product ID': product_id,
