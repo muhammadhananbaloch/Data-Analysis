@@ -17,7 +17,12 @@ discount=[]
 page_num=1
 for i in range(1,4):
     url=base_url+str(page_num)
-    r = requests.get(url)
+    try:
+        r = requests.get(url)
+        r.raise_for_status()  # Check for request errors
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching page {page_num}: {e}")
+        continue
     # convert to a beautiful soup object
     webpage = bs(r.content, "html.parser")
 
