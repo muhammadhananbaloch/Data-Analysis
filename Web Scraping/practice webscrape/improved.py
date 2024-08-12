@@ -50,7 +50,7 @@ while True:
         except:
             discount.append('')
             
-    next_page = webpage.select('div.page-wrapper main.page-main div.columns div.column.main div.toolbar.toolbar-products div.pages ul.items.pages-items a.action.next')
+    next_page = webpage.find_all('a',attrs={'class':'action next'})
     print(f"Scrapping page no: {page_num}")
     if next_page:
         page_num +=1
