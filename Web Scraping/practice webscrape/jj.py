@@ -8,5 +8,6 @@ r = requests.get(url)
 webpage = bs(r.content, "html.parser")
 
 page_wrapper = webpage.select('div.page-wrapper')
+main = [wrapper.select('main.page-main')for wrapper in page_wrapper]
 
 
