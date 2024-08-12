@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
 import pandas as pd
+import time
 
 # load the webpage
 base_url = "https://www.junaidjamshed.com/mens/kameez-shalwar.html?p="
@@ -71,6 +72,7 @@ while True:
     print(f"Scrapping page no: {page_num}")
     if next_page:
         page_num +=1
+        time.sleep(2)
     else:
         break
 
