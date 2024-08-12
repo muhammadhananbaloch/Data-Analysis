@@ -25,3 +25,12 @@ for items in complete_items:
 current_discount = []
 for items in complete_items:
     current_discount.append(items.select('div.product-item-info div.product.details.product-item-details div.price-box.price-final_price div.stock.unavailable.discount-percent span'))
+
+product_name=[]
+product_id=[]
+for names_ids in product_names_id:
+    for name_id in names_ids:
+        nameAndId = name_id.text.strip()
+        head, sep, tail = nameAndId.partition('|')
+        product_name.append(head.strip())
+        product_id.append(tail.strip())
