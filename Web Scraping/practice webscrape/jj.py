@@ -9,7 +9,7 @@ product_names_id = []
 product_prices = []
 current_discount = []
 
-#specific items
+#scrapped data for data frame
 product_name=[]
 product_id=[]
 product_price=[]
