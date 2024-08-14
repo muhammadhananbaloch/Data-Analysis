@@ -27,21 +27,21 @@ while True:
             for book in books:
                 try:
                     book_title.append(book.h3.a['title'])
-                except:
+                except AttributeError:
                     book_title.append('No title available')
                 
                 try:
                     book_price.append(book.find('p', class_='price_color').text.strip('Â£'))
-                except:
+                except AttributeError:
                     book_price.append('Price not available')
                 try:
                     book_rating.append(book.p['class'][1])  
-                except:
+                except (AttributeError, IndexError):
                     book_rating.append('Rating not available')
 
                 try:
                     stock_status.append(book.find('p', class_='instock availability').text.strip())
-                except:
+                except AttributeError:
                     stock_status.append('Stock status not available')
 
             next_page = soup.find('li', class_='next')  
