@@ -33,7 +33,7 @@ while True:
                 try:
                     book_price.append(book.find('p', class_='price_color').text.strip('Â£'))
                 except:
-                    book_price('Price not available')
+                    book_price.append('Price not available')
                 try:
                     book_rating.append(book.p['class'][1])  
                 except:
