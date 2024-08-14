@@ -32,4 +32,6 @@ for book in books:
         stock_status.append(book.find('p', class_='instock availability').text.strip())
     except:
         stock_status.append('Stock status not available')
-
+    
+book_data = {"Title": book_title, "Price": book_price, "Rating": book_rating, "Stock Status": stock_status}
+pd.DataFrame(book_data).to_csv('books.csv', index=False)
