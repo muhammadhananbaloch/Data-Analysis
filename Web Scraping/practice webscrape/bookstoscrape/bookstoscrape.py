@@ -44,11 +44,11 @@ while True:
                 except:
                     stock_status.append('Stock status not available')
 
-        next_page = soup.find('li', class_='next')  
-        if next_page:
-            page_no += 1
-        else:
-            break
+            next_page = soup.find('li', class_='next')  
+            if next_page:
+                page_no += 1
+            else:
+                break
 
 
 book_data = {"Title": book_title, "Price": book_price, "Rating": book_rating, "Stock Status": stock_status}
