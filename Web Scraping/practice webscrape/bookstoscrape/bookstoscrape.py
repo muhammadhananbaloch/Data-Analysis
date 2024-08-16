@@ -10,6 +10,7 @@ book_rating = []
 stock_status = []
 page_no = 1
 while True:
+# for range in (1,2):
     base_url = f'https://books.toscrape.com/catalogue/page-{page_no}.html'
 
     response = requests.get(base_url)   
