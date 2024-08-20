@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By 
 import time
+import pandas as pd
 
 try:
     website = 'https://www.adamchoi.co.uk/overs/detailed'
@@ -40,3 +41,7 @@ try:
     driver.quit()
 except Exception as e:
     print(e)
+
+df = pd.DataFrame({'Date': date, 'Home Team': home_team, 'Score': score, 'Away Team': away_team})    # Display the data in a DataFrame   
+df.to_csv('football_data.csv', index=False)    # Save the data in a CSV file  
+print(df)    # Display the data in the console  
