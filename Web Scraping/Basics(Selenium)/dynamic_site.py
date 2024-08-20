@@ -24,9 +24,19 @@ try:
     choose_season_button.click() # Click the button to show the 21/22 season
     time.sleep(2)
     matches = driver.find_elements(By.TAG_NAME, "tr") # Click the button to show all matches
+
+    date = []
+    home_team = []  
+    away_team = []
+    score = []
     for match in matches:
-        print(match.text)
-    time.sleep(10)   
+        date.append(match.find_element(By.XPATH, "./td[1]").text)
+        home = match.find_element(By.XPATH, "./td[2]").text
+        home_team.append(home)  
+        print(home)
+        score.append(match.find_element(By.XPATH, "./td[3]").text)
+        away_team.append(match.find_element(By.XPATH, "./td[4]").text)
+    # time.sleep(10)   
     driver.quit()
 except Exception as e:
     print(e)
